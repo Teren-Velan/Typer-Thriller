@@ -1,0 +1,247 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite;
+  
+  background-repeat: no-repeat;
+}
+
+.container{
+  width: 100%;
+  height: 800px;
+  background: url(background1.jpg);
+  background-size: contain;
+  animation: bckg 10s linear infinite;
+}
+
+#score{
+  margin: 0;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 50px;
+  padding:80px 0 0 50px;
+  color: #000;
+
+}
+
+.man,img,.road, .zombie, .zombie-dead{
+  position: absolute;
+}
+
+
+
+.road{
+  top: 61%;
+  height: 318px;
+  width: 1790px;
+  background: url(Road.jpg) repeat-x;
+  animation: road 20s linear infinite ;
+}
+
+.man{
+  top: 47%;
+  overflow: hidden;
+  left: 10%;
+  height: 318px;
+  width: 170px;
+  background:url(Man.png);
+  animation: man 1s steps(8) infinite;
+}
+
+.zombie{
+top: 62%;
+right: 20%;
+height: 300px;
+width: 123px;
+animation: zombie 0.5s infinite linear, forward 5s linear infinite ;
+background-repeat: no-repeat;
+animation-fill-mode: forwards;
+background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png),
+                  url(/copy/__Zomhie\ Attack\ 1_WALK_001\ copy.png),
+                  url(/copy/__Zomhie\ Attack\ 1_WALK_002\ copy.png),
+                  url(/copy/__Zomhie\ Attack\ 1_WALK_003\ copy.png),
+                  url(/copy/__Zomhie\ Attack\ 1_WALK_004\ copy.png),
+                  url(/copy/__Zomhie\ Attack\ 1_WALK_005\ copy.png),
+                  url(/copy/__Zomhie\ Attack\ 1_WALK_006\ copy.png),
+                  url(/copy/__Zomhie\ Attack\ 1_WALK_007\ copy.png),
+                  url(/copy/__Zomhie\ Attack\ 1_WALK_008\ copy.png),
+                  url(/copy/__Zomhie\ Attack\ 1_WALK_009\ copy.png);
+
+}
+
+.zombie-dead{
+  top: 62%;
+  right: 20%;
+  height: 300px;
+  width: 210px;
+  /* background: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_004.png),
+              url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_005.png),
+              url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_006.png),
+              url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_007.png),
+              url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_008.png),
+              url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_009.png); */
+  animation: zombieDead 1s linear , forward 5s linear infinite ;
+  background-repeat: no-repeat;
+  /* animation-fill-mode: forwards; */
+}
+
+
+
+.word-display-dead{
+  display: none;
+}
+
+
+
+
+.zombie > div{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin: 0;
+  background-color: #000;
+  border-radius: 10px;
+}
+
+
+
+
+.user-input{
+  display: flex;
+  margin: 50px 0 0 25%;
+}
+
+#user_input{
+  width: 800px;
+  height: 81px;
+  margin-top: 18px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.user-input button{
+  width: 100px;
+  font-size: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  height: 90px;
+  margin-top: 17px;
+}
+
+
+
+
+/* classes for use via DOM */
+.correct{
+  color: greenyellow;
+}
+
+
+
+
+
+
+
+/* keyframes */
+
+
+@keyframes man{
+  from{
+    background-position: 0px;
+  }
+  to{
+    background-position: -1472px;
+  }
+}
+
+@keyframes bckg{
+  0%{
+    background-position: 0%;
+  }100%{
+    background-position: -98%;
+  }
+}
+
+@keyframes road {
+  0%{
+    background-position: 0%;
+  }100%{
+    background-position: -98%;
+  }
+}
+
+
+@keyframes zombie {
+0%{
+  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png), url(/copy/__Zomhie\ Attack\ 1_WALK_001\ copy.png);
+}
+10%{
+  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_001\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_002\ copy.png);
+}
+20%{
+  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_002\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_003\ copy.png);
+}
+30%{
+  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_003\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_004\ copy.png);
+}
+40%{
+  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_004\ copy.png), url(/copy/__Zomhie\ Attack\ 1_WALK_005\ copy.png);
+}
+50%{
+  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_005\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_006\ copy.png);
+}
+60%{
+  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_006\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_007\ copy.png)
+}
+70%{
+  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_007\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_008\ copy.png);
+}
+80%{
+  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_008\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_009\ copy.png);
+}
+90%{
+  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_009\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png);
+}
+100%{
+  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png);
+}
+
+}
+
+
+
+
+@keyframes zombieDead {
+0%{
+    background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_004.png);
+  }
+  20%{
+    background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_005.png);
+  }
+  40%{
+    background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_006.png);
+  }
+  60%{
+    background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_007.png);
+  }
+  80%{
+    background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_008.png);
+  }
+  90%{
+    background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_009.png);
+    
+  }
+  100%{
+    display: none;
+  }
+  }
+
+
+@keyframes forward {
+  from{
+    transform:translateX(400px);
+  }to{
+    transform:translateX(-1000px)
+  }
+}
