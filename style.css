@@ -3,7 +3,6 @@ body{
   margin: 0;
   padding: 0;
   background-color: antiquewhite;
-  
   background-repeat: no-repeat;
 }
 
@@ -28,8 +27,6 @@ body{
   position: absolute;
 }
 
-
-
 .road{
   top: 61%;
   height: 318px;
@@ -53,10 +50,8 @@ top: 62%;
 right: 20%;
 height: 300px;
 width: 123px;
-animation: zombie 0.5s infinite linear, forward 5s linear infinite ;
 background-repeat: no-repeat;
-animation-fill-mode: forwards;
-background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png),
+/* background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png),
                   url(/copy/__Zomhie\ Attack\ 1_WALK_001\ copy.png),
                   url(/copy/__Zomhie\ Attack\ 1_WALK_002\ copy.png),
                   url(/copy/__Zomhie\ Attack\ 1_WALK_003\ copy.png),
@@ -65,8 +60,9 @@ background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png),
                   url(/copy/__Zomhie\ Attack\ 1_WALK_006\ copy.png),
                   url(/copy/__Zomhie\ Attack\ 1_WALK_007\ copy.png),
                   url(/copy/__Zomhie\ Attack\ 1_WALK_008\ copy.png),
-                  url(/copy/__Zomhie\ Attack\ 1_WALK_009\ copy.png);
-
+                  url(/copy/__Zomhie\ Attack\ 1_WALK_009\ copy.png); */
+animation: zombie 0.5s infinite linear, forward 10s linear infinite ;
+animation-fill-mode: forwards;
 }
 
 .zombie-dead{
@@ -80,19 +76,15 @@ background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png),
               url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_007.png),
               url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_008.png),
               url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_009.png); */
-  animation: zombieDead 1s linear , forward 5s linear infinite ;
+
+  animation: zombieDead 0.5s linear;
   background-repeat: no-repeat;
-  /* animation-fill-mode: forwards; */
+  animation-fill-mode: forwards;
 }
-
-
 
 .word-display-dead{
   display: none;
 }
-
-
-
 
 .zombie > div{
   font-size: 30px;
@@ -103,8 +95,6 @@ background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png),
   background-color: #000;
   border-radius: 10px;
 }
-
-
 
 
 .user-input{
@@ -130,21 +120,12 @@ background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png),
 }
 
 
-
-
 /* classes for use via DOM */
 .correct{
   color: greenyellow;
 }
 
-
-
-
-
-
-
 /* keyframes */
-
 
 @keyframes man{
   from{
@@ -172,49 +153,46 @@ background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png),
 }
 
 
-@keyframes zombie {
+@keyframes zombie{
 0%{
-  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png), url(/copy/__Zomhie\ Attack\ 1_WALK_001\ copy.png);
+  background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png)
 }
 10%{
-  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_001\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_002\ copy.png);
+  background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_001\ copy.png)
 }
 20%{
-  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_002\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_003\ copy.png);
+  background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_002\ copy.png)
 }
 30%{
-  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_003\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_004\ copy.png);
+  background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_003\ copy.png)
 }
 40%{
-  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_004\ copy.png), url(/copy/__Zomhie\ Attack\ 1_WALK_005\ copy.png);
+  background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_004\ copy.png)
 }
 50%{
-  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_005\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_006\ copy.png);
+  background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_005\ copy.png)
 }
 60%{
-  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_006\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_007\ copy.png)
+  background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_006\ copy.png)
 }
 70%{
-  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_007\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_008\ copy.png);
+  background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_007\ copy.png)
 }
 80%{
-  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_008\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_009\ copy.png);
+  background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_008\ copy.png)
 }
 90%{
-  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_009\ copy.png),url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png);
+  background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_009\ copy.png)
 }
 100%{
-  background-image: url(copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png);
-}
-
-}
+  background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png)
+}}
 
 
-
-
-@keyframes zombieDead {
+@keyframes zombieDead{
 0%{
     background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_004.png);
+    
   }
   20%{
     background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_005.png);
@@ -228,15 +206,12 @@ background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png),
   80%{
     background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_008.png);
   }
-  90%{
+  /* 90%{
     background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_009.png);
-    
-  }
+  } */
   100%{
     display: none;
-  }
-  }
-
+   }}
 
 @keyframes forward {
   from{
