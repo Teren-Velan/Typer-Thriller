@@ -11,7 +11,7 @@ body{
   height: 800px;
   background: url(background1.jpg);
   background-size: contain;
-  animation: bckg 10s linear infinite;
+  animation: bckg 30s linear infinite;
 }
 
 #score{
@@ -32,7 +32,7 @@ body{
   height: 318px;
   width: 1790px;
   background: url(Road.jpg) repeat-x;
-  animation: road 20s linear infinite ;
+  animation: road 20s linear infinite;
 }
 
 .man{
@@ -82,11 +82,11 @@ animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
-.word-display-dead{
+/* .word-display-dead{
   display: none;
-}
+} */
 
-.zombie > div{
+.word-display{
   font-size: 30px;
   font-weight: bold;
   text-align: center;
@@ -192,26 +192,30 @@ animation-fill-mode: forwards;
 @keyframes zombieDead{
 0%{
     background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_004.png);
-    
   }
   20%{
     background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_005.png);
+
   }
   40%{
     background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_006.png);
+
   }
   60%{
     background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_007.png);
+
   }
   80%{
     background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_008.png);
+
   }
-  /* 90%{
+  90%{
     background-image: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_009.png);
-  } */
+  }
   100%{
     display: none;
    }}
+
 
 @keyframes forward {
   from{
