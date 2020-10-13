@@ -1,4 +1,4 @@
-let words_array = ["hello" , "test" , "bottle" , "sticker" , "photo" , "mouse" , "dog" , "cat" , "mask" , "bag" , "water" , "cork" , "picture"]
+let words_array = ["microscopic","alphabetical", "hello" , "test" , "bottle" , "sticker" , "photo" , "mouse" , "dog" , "cat" , "mask" , "bag" , "water" , "cork" , "picture"]
 
 let score = 0
 let wordsArrayPos = 0
@@ -16,6 +16,9 @@ let $zombWordDisplay = document.createElement("div")
 let userPoints = document.querySelector("#score") //score selector
 let userInput = document.querySelector("#user_input") //userinput
 let zombieContainer = document.querySelector("#zombie-container")
+
+let movingMan = document.querySelector(".man")
+
 
 
 
@@ -67,9 +70,29 @@ userInput.addEventListener("input" , () =>{
   })
 
   if(word_display_array[word_display_array.length -1].classList == "correct"){
+    // $zombieChar.classList.add("zombie-dead") 
+    // $zombieChar.classList.remove("zombie-dead")
     zombieContainer.removeChild($zombieChar)
     appendWord()
     zombieContainer.appendChild($zombieChar)
     userInput.value = ""
+    userPoints.innerText = `Score: ${score += 10}`
   }
 })
+
+
+// collision detection
+
+let checkDead = setInterval(function(){
+  let manRight = parseInt(window.getComputedStyle(movingMan).getPropertyValue("right"));
+  // console.log(manRight) //974
+  let zombieleft = parseInt(window.getComputedStyle($zombieChar).getPropertyValue("left"));
+  // console.log(zombieleft)//856
+  
+  if(zombieleft >= 856 && zombieleft <= 974){
+    console.log("wazzzupp")
+  }
+
+},10);
+
+checkDead

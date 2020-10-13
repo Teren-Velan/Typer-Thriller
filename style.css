@@ -36,7 +36,7 @@ body{
 }
 
 .man{
-  top: 47%;
+  top: 46%;
   overflow: hidden;
   left: 10%;
   height: 318px;
@@ -47,7 +47,7 @@ body{
 
 .zombie{
 top: 62%;
-right: 20%;
+right: 25%;
 height: 300px;
 width: 123px;
 background-repeat: no-repeat;
@@ -61,11 +61,11 @@ background-repeat: no-repeat;
                   url(/copy/__Zomhie\ Attack\ 1_WALK_007\ copy.png),
                   url(/copy/__Zomhie\ Attack\ 1_WALK_008\ copy.png),
                   url(/copy/__Zomhie\ Attack\ 1_WALK_009\ copy.png); */
-animation: zombie 0.5s infinite linear, forward 10s linear infinite ;
+animation: zombie 0.6s infinite linear, forward 5s linear infinite ;
 animation-fill-mode: forwards;
 }
 
-.zombie-dead{
+/* .zombie-dead{
   top: 62%;
   right: 20%;
   height: 300px;
@@ -77,10 +77,10 @@ animation-fill-mode: forwards;
               url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_008.png),
               url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_009.png); */
 
-  animation: zombieDead 0.5s linear;
+  /* animation: zombieDead 0.5s linear;
   background-repeat: no-repeat;
   animation-fill-mode: forwards;
-}
+} */ 
 
 /* .word-display-dead{
   display: none;
@@ -93,7 +93,7 @@ animation-fill-mode: forwards;
   color: white;
   margin: 0;
   background-color: #000;
-  border-radius: 10px;
+  border-radius: 10px;;
 }
 
 
