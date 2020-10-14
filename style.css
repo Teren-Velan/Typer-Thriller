@@ -4,6 +4,13 @@ body{
   padding: 0;
   background-color: antiquewhite;
   background-repeat: no-repeat;
+  
+}
+
+.modal-container{
+  width: 100%;
+  height:100% ;
+  background-color: yellow;
 }
 
 .container{
@@ -12,15 +19,25 @@ body{
   background: url(background1.jpg);
   background-size: contain;
   animation: bckg 30s linear infinite;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
 }
 
 #score{
   margin: 0;
   font-family: 'Luckiest Guy', cursive;
   font-size: 50px;
-  padding:80px 0 0 50px;
+  padding:100px 0 0 50px;
   color: #000;
+}
 
+#word-count{
+  margin: 0;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 50px;
+  padding:100px 0 0 50px;
+  color: #000;
 }
 
 .man,img,.road, .zombie, .zombie-dead{
@@ -36,20 +53,32 @@ body{
 }
 
 .man{
-  top: 46%;
+  top: 45%;
   overflow: hidden;
   left: 10%;
   height: 318px;
   width: 170px;
   background:url(Man.png);
   animation: man 1s steps(8) infinite;
+  /* z-index: 100; */
+}
+
+#zombie-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .zombie{
+display: flex;
+align-items: flex-start;
+justify-content: center;
+flex-direction:row-reverse;
 top: 62%;
-right: 25%;
+right: 23%;
 height: 300px;
-width: 123px;
+width: 200px;
 background-repeat: no-repeat;
 /* background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png),
                   url(/copy/__Zomhie\ Attack\ 1_WALK_001\ copy.png),
@@ -61,8 +90,10 @@ background-repeat: no-repeat;
                   url(/copy/__Zomhie\ Attack\ 1_WALK_007\ copy.png),
                   url(/copy/__Zomhie\ Attack\ 1_WALK_008\ copy.png),
                   url(/copy/__Zomhie\ Attack\ 1_WALK_009\ copy.png); */
-animation: zombie 0.6s infinite linear, forward 5s linear infinite ;
+animation: zombie 0.5s infinite linear, forward 4.5s linear infinite ;
 animation-fill-mode: forwards;
+z-index: 1;
+background-position: top center;
 }
 
 /* .zombie-dead{
@@ -91,9 +122,11 @@ animation-fill-mode: forwards;
   font-weight: bold;
   text-align: center;
   color: white;
-  margin: 0;
+  margin:0;
   background-color: #000;
-  border-radius: 10px;;
+  border-radius: 10px;
+  width: auto;
+  padding:0 30px;
 }
 
 

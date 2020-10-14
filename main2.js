@@ -1,12 +1,12 @@
-let words_array = ["microscopic","alphabetical", "hello" , "test" , "bottle" , "sticker" , "photo" , "mouse" , "dog" , "cat" , "mask" , "bag" , "water" , "cork" , "picture"]
+let words_array = ["hello" , "test" , "bottle" , "sticker" , "photo" , "mouse" , "dog" , "cat" , "mask" , "bag" , "water" , "cork" , "picture"]
 
 let score = 0
+let wordCounter = 0
 let wordsArrayPos = 0
 let currentWord = ""
 
 
 // <--------------- DOM --------------->
-
 
 // creating the element
 let $zombieChar = document.createElement("div")
@@ -14,9 +14,9 @@ let $zombWordDisplay = document.createElement("div")
 
 // selecting elements
 let userPoints = document.querySelector("#score") //score selector
+let wordCount = document.querySelector("#word-count")
 let userInput = document.querySelector("#user_input") //userinput
 let zombieContainer = document.querySelector("#zombie-container")
-
 let movingMan = document.querySelector(".man")
 
 
@@ -26,23 +26,14 @@ let movingMan = document.querySelector(".man")
 $zombieChar.classList.add("zombie");
 $zombWordDisplay.classList.add("word-display")
 
+// // appending DOMS
 
-// appending DOMS
 
 
-// function for updating word
 
-function appendWord(){
-   $zombWordDisplay.textContent = null
-    currentWord = words_array[wordsArrayPos]
-    currentWord.split("").forEach(char => {
-    let charSpan = document.createElement("span")
-    charSpan.innerText = char
-    $zombWordDisplay.appendChild(charSpan)
-    $zombieChar.appendChild($zombWordDisplay)
-    zombieContainer.appendChild($zombieChar)
-  })
+let r4 = movingMan.getClientRects()
 
+function updateWordArrayPos(){
    if(wordsArrayPos < words_array.length -1){
         wordsArrayPos++
       }
@@ -50,8 +41,24 @@ function appendWord(){
         wordsArrayPos = 0
       }
 }
-appendWord()
 
+function gameStart(){
+    $zombWordDisplay.textContent = null
+    currentWord = words_array[wordsArrayPos]
+    currentWord.split("").forEach(char => {
+    let charSpan = document.createElement("span")
+    charSpan.innerText = char
+    $zombWordDisplay.appendChild(charSpan)
+    $zombieChar.appendChild($zombWordDisplay)
+    zombieContainer.appendChild($zombieChar)
+  let r3 = $zombieChar.getClientRects()
+  console.log(r3)
+
+  })
+  updateWordArrayPos()
+  // window.requestAnimationFrame(gameStart);
+}
+gameStart()
 
 // Event Listener for userInput
 
@@ -73,26 +80,47 @@ userInput.addEventListener("input" , () =>{
     // $zombieChar.classList.add("zombie-dead") 
     // $zombieChar.classList.remove("zombie-dead")
     zombieContainer.removeChild($zombieChar)
-    appendWord()
+    gameStart()
     zombieContainer.appendChild($zombieChar)
     userInput.value = ""
     userPoints.innerText = `Score: ${score += 10}`
+    wordCount.innerText = `Word Count: ${wordCounter += 1}`
   }
 })
 
 
+
 // collision detection
 
-let checkDead = setInterval(function(){
-  let manRight = parseInt(window.getComputedStyle(movingMan).getPropertyValue("right"));
-  // console.log(manRight) //974
-  let zombieleft = parseInt(window.getComputedStyle($zombieChar).getPropertyValue("left"));
-  // console.log(zombieleft)//856
+// let checkDead = setInterval(function(){
+//   // let manRight = parseInt(window.getComputedStyle(movingMan).getPropertyValue("right"));
+//   // console.log(manRight) //974
+
+//   let zombieleft = parseInt(window.getComputedStyle($zombieChar)
+//   .getPropertyValue("y"));
+//   console.log(zombieleft)//831
+
+//   // if(zombieleft > 0 && zombieleft < 350){
+//   //   console.log("wazzp")
+//   // }
   
-  if(zombieleft >= 856 && zombieleft <= 974){
-    console.log("wazzzupp")
-  }
+// },1000);
 
-},10);
+// checkDead
 
-checkDead
+// let r1 = $zombieChar.getClientRects()
+// // console.log(zombieCol)
+// let r2 = movingMan.getClientRects()
+// // console.log(manCol)
+
+// let r3 = $zombieChar.getClientRects()
+//  console.log(r3)
+// let r4 = movingMan.getClientRects()
+// console.log(r4)
+
+
+// if((hitDetection(r1,r2))){
+//   console.log("wazzup")
+// }
+
+
