@@ -6,10 +6,26 @@
   <title>Teren Game</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   
 </head>
 <body>
-<div class="modal-container"></div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1 class="id-header">~ Typer Thriller ~</h1>
+    <p class="intro-msg">Welcome to <span class="enlarge">Typer Thriller</span> , save Micheal by typing the words above the zombies head to kill them.</p>
+    <p class="outro-msg">The fate of Micheal, lies in your typing</p>
+    <p class="final-msg">~ Have Fun ~</p>
+
+  </div>
+</div>
+
+
+
 <div class="container">
   <p id="score">Score:</p>
   <p id="word-count">Word Count:</p>
@@ -27,7 +43,7 @@
 
 <div class="user-input">
 
-  <input type="text" placeholder="type here" autofocus id="user_input">
+  <input type="text" placeholder="Click here to start typing" id="user_input">
 
 </div>
 
