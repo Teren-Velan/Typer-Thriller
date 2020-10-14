@@ -4,6 +4,7 @@ let score = 0
 let wordCounter = 0
 let wordsArrayPos = 0
 let currentWord = ""
+let gamePlay = true
 
 
 // <--------------- DOM --------------->
@@ -27,11 +28,13 @@ $zombieChar.classList.add("zombie");
 $zombWordDisplay.classList.add("word-display")
 
 // // appending DOMS
+// while (gamePlay) {
+  // let r00 = $zombieChar.getClientRects()
+  // console.log(r00)
+// }
 
 
 
-
-let r4 = movingMan.getClientRects()
 
 function updateWordArrayPos(){
    if(wordsArrayPos < words_array.length -1){
@@ -42,6 +45,7 @@ function updateWordArrayPos(){
       }
 }
 
+
 function gameStart(){
     $zombWordDisplay.textContent = null
     currentWord = words_array[wordsArrayPos]
@@ -51,10 +55,11 @@ function gameStart(){
     $zombWordDisplay.appendChild(charSpan)
     $zombieChar.appendChild($zombWordDisplay)
     zombieContainer.appendChild($zombieChar)
+  })
   let r3 = $zombieChar.getClientRects()
   console.log(r3)
-
-  })
+  let r4 = movingMan.getClientRects()
+  console.log(r4)
   updateWordArrayPos()
   // window.requestAnimationFrame(gameStart);
 }
