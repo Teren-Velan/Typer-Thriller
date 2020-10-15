@@ -1,12 +1,12 @@
-let words_array = ["hello" , "test" , "bottle" , "sticker" , "photo" , "mouse" , "dog" , "cat" , "mask" , "bag" , "water" , "cork" , "picture"]
-
+let words_array = ["bottle" , "sticker" , "photo" , "mouse" , "bag" , "water" , "cork", "curriculum" , "determined",  "cat", "engagement" , "government" , "incredibly" , "management" ,"dog" , "philosophy" , "recognized" , "situations" , "technology","mask" ,"complexity", "basically" , "test" , "breakfast" , "concerned" , "javascript" , "cascading" , "style", "sheet" , "hyper" , "text", "markup", "language", "hello", ]
+ 
 let score = 0
 let wordCounter = 0
 let wordsArrayPos = Math.floor(Math.random() * words_array.length)
 let currentWord = ""
-let gamePlay = true
-let gameBegin = true
+let appear = false
 
+// "picture" , "watermelon" , "appearance" , "background",
 
 // <--------------- DOM --------------->
 
@@ -14,7 +14,9 @@ let gameBegin = true
 let $zombieChar = document.createElement("div")
 let $zombWordDisplay = document.createElement("div")
 // let modal = document.querySelector(".modal")
-var modal = document.getElementById("myModal");
+let modal = document.getElementById("myModal");
+let modal2 = document.querySelector("#myModal2")
+
 
 // selecting elements
 let userPoints = document.querySelector("#score") //score selector
@@ -24,8 +26,10 @@ let zombieContainer = document.querySelector("#zombie-container")
 let movingMan = document.querySelector(".man")
 let road = document.querySelector(".road")
 
+let sweetAlert = document.querySelector(".swal-overlay")
 
-
+let endScore = document.querySelector(".end-score")
+let endWordCount = document.querySelector(".end-word-count")
 
 // setting element attributes
 $zombieChar.classList.add("zombie");
@@ -38,22 +42,21 @@ $zombWordDisplay.classList.add("word-display")
   // console.log(r00)
 // }
 
-document.addEventListener("DOMContentLoaded", function(event) {
-// if(gameBegin){
-    modal.style.display = "block"
-    $zombieChar.style.display = "none"
-    movingMan.style.display = "none"
-    road.style.display = "none"
-    document.addEventListener("click" , function(e){
+document.addEventListener("DOMContentLoaded", function(event) {     
+      modal.style.display = "block"
+      $zombieChar.style.display = "none"
+      movingMan.style.display = "none"
+      road.style.display = "none"
+     
+      document.addEventListener("click" , function(e){
       modal.style.display = "none"
       $zombieChar.style.display = "block"
       movingMan.style.display = "block"
       road.style.display = "block"
+      appear = true
       
     })
-     
   }
-// }
 
 );
 
@@ -69,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function updateWordArrayPos(){
    if(wordsArrayPos < words_array.length -1){
-        wordsArrayPos++
+    wordsArrayPos = Math.floor(Math.random() * words_array.length)
       }
       else{
         wordsArrayPos = 0
@@ -80,6 +83,7 @@ function updateWordArrayPos(){
 function gameStart(){
     $zombWordDisplay.textContent = null
     currentWord = words_array[wordsArrayPos]
+    console.log(wordsArrayPos)
     currentWord.split("").forEach(char => {
     let charSpan = document.createElement("span")
     charSpan.innerText = char
@@ -119,13 +123,13 @@ userInput.addEventListener("input" , () =>{
   }
 })
 
+  
 
+// let zombieSpeed = 10;
+// let startTime = Date.now()
+// let playerX = 950;
 
-let zombieSpeed = 100;
-let startTime = Date.now()
-let playerX = 950;
-
-$zombieChar.style.transform = "translate(950px, 750px)";
+// $zombieChar.style.transform = "translate(950px, 750px)";
 
 function hitDetection(r1, r2) {
   return !(
@@ -133,68 +137,36 @@ function hitDetection(r1, r2) {
       r2.right < r1.left ||
       r2.top > r1.bottom ||
       r2.bottom < r1.top
-    );
+    );  
+   
 }
 
-function gameLoop(e){
-  let currentTime = Date.now();
-  // console.log(currentTime)
-  // console.log(startTime)
-  let dt = (currentTime - startTime) / 1000;
-  playerX -= dt * zombieSpeed
-  // console.log(playerX)
-  $zombieChar.style.transform = `translate(${playerX}px, 750px)`;
+function gameLoop(){
+  // let currentTime = Date.now();
+  // let dt = (currentTime - startTime) / 1000;
+  // playerX -= dt * zombieSpeed
+  // $zombieChar.style.transform = `translate(${playerX}px, 750px)`;
 
   // check intersection
   let r1 = $zombieChar.getBoundingClientRect();
+  
   let r2 = movingMan.getBoundingClientRect();
 
-  if(hitDetection(r1,r2)){
+  if(appear){
+    if(hitDetection(r1 , r2)){
+    modal2.style.display = "block"
+    endScore.innerText = `Score: ${score}`
+    endWordCount.innerText = `Word Count: ${wordCounter}`
     $zombieChar.style.display = "none"
     movingMan.style.display = "none"
-    road.style.display = "none"
-      // swal({
-      //   title: "Too Slow",
-      //   text: "The zombie killed Micheal!",
-      //   // text: `Score: ${score}`,
-      //   icon: "success",
-      //   button: "Try Again",
-      // });
-      
-
-  }  
-
-   startTime = currentTime;
+    road.style.display = "none" 
+    }
+  }
+  
+  //  startTime = currentTime;
    window.requestAnimationFrame(gameLoop)
 }
 gameStart()
 window.requestAnimationFrame(gameLoop)
 
 
-
-
-// Get the modal
-// var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// // When the user clicks on the button, open the modal
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
