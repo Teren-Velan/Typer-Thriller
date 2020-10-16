@@ -60,8 +60,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 );
 
 
-
-
 function updateWordArrayPos(){
    if(wordsArrayPos < words_array.length -1){
     wordsArrayPos = Math.floor(Math.random() * words_array.length)
@@ -70,7 +68,6 @@ function updateWordArrayPos(){
         wordsArrayPos = 0
       }
 }
-
 
 function gameStart(){
     $zombWordDisplay.textContent = null
@@ -85,8 +82,6 @@ function gameStart(){
   })
   updateWordArrayPos()
 }
-
-
 
 // Event Listener for userInput
 userInput.addEventListener("input" , () =>{
