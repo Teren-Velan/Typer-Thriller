@@ -57,15 +57,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       
     })
   }
-
 );
-
-
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// starter()
 
 
 
@@ -125,11 +117,11 @@ userInput.addEventListener("input" , () =>{
 
   
 
-// let zombieSpeed = 10;
-// let startTime = Date.now()
-// let playerX = 950;
+let zombieSpeed = 10;
+let startTime = Date.now()
+let playerX = 950;
 
-// $zombieChar.style.transform = "translate(950px, 750px)";
+$zombieChar.style.transform = "translate(950px, 750px)";
 
 function hitDetection(r1, r2) {
   return !(
@@ -142,10 +134,10 @@ function hitDetection(r1, r2) {
 }
 
 function gameLoop(){
-  // let currentTime = Date.now();
-  // let dt = (currentTime - startTime) / 1000;
-  // playerX -= dt * zombieSpeed
-  // $zombieChar.style.transform = `translate(${playerX}px, 750px)`;
+  let currentTime = Date.now();
+  let dt = (currentTime - startTime) / 1000;
+  playerX -= dt * zombieSpeed
+  $zombieChar.style.transform = `translate(${playerX}px, 750px)`;
 
   // check intersection
   let r1 = $zombieChar.getBoundingClientRect();
