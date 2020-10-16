@@ -1,4 +1,4 @@
-let words_array = ["bottle" , "sticker" , "photo" , "mouse" , "bag" , "water" , "cork", "curriculum" , "determined",  "cat", "engagement" , "government" , "incredibly" , "management" ,"dog" , "philosophy" , "recognized" , "situations" , "technology","mask" ,"complexity", "basically" , "test" , "breakfast" , "concerned" , "javascript" , "cascading" , "style", "sheet" , "hyper" , "text", "markup", "language", "hello", ]
+let words_array = ["bottle" , "sticker" , "photo" , "mouse" , "bag" , "water" , "cork", "curriculum" , "determined",  "cat", "engagement" , "government" , "incredibly" ,"dog" , "philosophy" , "recognized" , "situations" , "technology","mask" ,"complexity", "basically" , "test" , "breakfast" , "concerned" , "javascript" , "cascading" , "style", "sheet" , "hyper" , "text", "markup", "language", "hello","variation" , "vagueness" , "volunteer" , "vagabonds", "hierarchy" ,"habitable" , "diabetes" , "domestic" , "discover" , "zoetrope" , "zeppelin" , "zaratite" , "scheme" , "second" , "senior" , "houses" , "increase" , "involves" , "investors" , "interview" , "general" , "assembly", "singapore"]
  
 let score = 0
 let wordCounter = 0
