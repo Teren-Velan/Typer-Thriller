@@ -1,9 +1,13 @@
+/* html{
+  overflow-x: hidden;
+} */
 
 body{
   margin: 0;
   padding: 0;
   background-color: antiquewhite;
   background-repeat: no-repeat;
+
   
 }
 
@@ -15,13 +19,15 @@ body{
 
 .container{
   width: 100%;
+  /* height:690px; */
   height:750px;
-  background: url(background1.jpg);
+  background: url(/Background/background1.jpg);
   background-size: contain;
   animation: bckg 30s linear infinite;
   display: flex;
   text-align: center;
   justify-content: space-around;
+  /* overflow-y: hidden; */
 }
 
 #score{
@@ -45,20 +51,20 @@ body{
 }
 
 .road{
-  top: 61%;
-  height: 250px;
+  top: 75%;
+  height: 150px;
   width: 1790px;
-  background: url(Road.jpg) repeat-x;
+  background: url(/Background/Road.jpg) repeat-x;
   animation: road 20s linear infinite;
 }
 
 .man{
-  top: 43%;
+  top: 47%;
   overflow: hidden;
   left: 10%;
   height: 318px;
   width: 170px;
-  background:url(Man.png);
+  background:url(/Background/Man.png);
   animation: man 1s steps(8) infinite;
   /* z-index: 100; */
 }
@@ -75,47 +81,17 @@ display: flex;
 align-items: flex-start;
 justify-content: center;
 flex-direction:row-reverse;
-top: 58.5%;
+/* top: 58.5%; */
+top: 65%;
 right: 23%;
 height: 300px;
 width: 200px;
 background-repeat: no-repeat;
-/* background-image: url(/copy/__Zomhie\ Attack\ 1_WALK_000\ copy.png),
-                  url(/copy/__Zomhie\ Attack\ 1_WALK_001\ copy.png),
-                  url(/copy/__Zomhie\ Attack\ 1_WALK_002\ copy.png),
-                  url(/copy/__Zomhie\ Attack\ 1_WALK_003\ copy.png),
-                  url(/copy/__Zomhie\ Attack\ 1_WALK_004\ copy.png),
-                  url(/copy/__Zomhie\ Attack\ 1_WALK_005\ copy.png),
-                  url(/copy/__Zomhie\ Attack\ 1_WALK_006\ copy.png),
-                  url(/copy/__Zomhie\ Attack\ 1_WALK_007\ copy.png),
-                  url(/copy/__Zomhie\ Attack\ 1_WALK_008\ copy.png),
-                  url(/copy/__Zomhie\ Attack\ 1_WALK_009\ copy.png); */
 animation: zombie 0.5s infinite linear, forward 4s linear infinite ;
 animation-fill-mode: forwards;
 z-index: 1;
 background-position: top center;
 }
-
-/* .zombie-dead{
-  top: 62%;
-  right: 20%;
-  height: 300px;
-  width: 210px;
-  /* background: url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_004.png),
-              url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_005.png),
-              url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_006.png),
-              url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_007.png),
-              url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_008.png),
-              url(/zombie_dead/__Zomhie\ Attack\ 1_DEAD_009.png); */
-
-  /* animation: zombieDead 0.5s linear;
-  background-repeat: no-repeat;
-  animation-fill-mode: forwards;
-} */ 
-
-/* .word-display-dead{
-  display: none;
-} */
 
 .word-display{
   font-size: 30px;
@@ -132,7 +108,9 @@ background-position: top center;
 
 .user-input{
   display: flex;
-  margin: 100px 0 0 25%;
+  /* margin: 0 0 0 25%; */
+  justify-content: center;
+  align-items: center;
 }
 
 #user_input{
@@ -387,8 +365,7 @@ background-position: top center;
 }
 
 
-.modal-content2 > a{
-  margin-left: 480px;
+.modal-content2-retry > a{
   text-decoration: none;
   text-align: center;
   font-size: 25px;
@@ -403,4 +380,10 @@ background-position: top center;
 .modal-content2 > a:hover{
   background-color: #fff;
   color: rgb(53, 180, 180); ;
+}
+
+.modal-content2-retry{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
