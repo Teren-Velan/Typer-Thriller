@@ -11,7 +11,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<img width="1777" alt="titlepage" src="https://user-images.githubusercontent.com/63656708/98432235-46b1cb00-20f7-11eb-9a60-636edf226f55.png">
+
 
 As part of my first at General Assembly, I created a speed typing game.
 
